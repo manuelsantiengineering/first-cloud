@@ -17,115 +17,117 @@ import com.msanti.authservice.enums.Authorities;
 @Document
 public class User implements UserDetails {
 
-    @Id
-    private String id;
+  private static final long serialVersionUID = 6086666119671673029L;
 
-    @Indexed(unique = true)
-    private String username;
+  @Id
+  private String id;
 
-    private String password;
+  @Indexed(unique = true)
+  private String username;
 
-    private boolean activated;
+  private String password;
 
-    private String activationKey;
+  private boolean activated;
 
-    private String resetPasswordKey;
+  private String activationKey;
 
-    private Set<Authorities> authorities = new HashSet<>();
+  private String resetPasswordKey;
 
-    public String getId() {
-        return id;
-    }
+  private Set<Authorities> authorities = new HashSet<>();
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public String getId() {
+      return id;
+  }
 
-    @Override
-    public String getPassword() {
-        return password;
-    }
+  public void setId(String id) {
+      this.id = id;
+  }
 
-    @Override
-    public String getUsername() {
-        return username;
-    }
+  @Override
+  public String getPassword() {
+      return password;
+  }
 
-    @Override
-    public List<GrantedAuthority> getAuthorities() {
-        return new ArrayList<>(authorities);
-    }
+  @Override
+  public String getUsername() {
+      return username;
+  }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  @Override
+  public List<GrantedAuthority> getAuthorities() {
+      return new ArrayList<>(authorities);
+  }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public void setUsername(String username) {
+      this.username = username;
+  }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
+  public void setPassword(String password) {
+      this.password = password;
+  }
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
+  @Override
+  public boolean isAccountNonExpired() {
+      return true;
+  }
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
+  @Override
+  public boolean isAccountNonLocked() {
+      return true;
+  }
 
-    @Override
-    public boolean isEnabled() {
-        return activated;
-    }
+  @Override
+  public boolean isCredentialsNonExpired() {
+      return true;
+  }
 
-    public boolean isActivated() {
-        return activated;
-    }
+  @Override
+  public boolean isEnabled() {
+      return activated;
+  }
 
-    public void setActivated(boolean activated) {
-        this.activated = activated;
-    }
+  public boolean isActivated() {
+      return activated;
+  }
 
-    public String getActivationKey() {
-        return activationKey;
-    }
+  public void setActivated(boolean activated) {
+      this.activated = activated;
+  }
 
-    public void setActivationKey(String activationKey) {
-        this.activationKey = activationKey;
-    }
+  public String getActivationKey() {
+      return activationKey;
+  }
 
-    public String getResetPasswordKey() {
-        return resetPasswordKey;
-    }
+  public void setActivationKey(String activationKey) {
+      this.activationKey = activationKey;
+  }
 
-    public void setResetPasswordKey(String resetPasswordKey) {
-        this.resetPasswordKey = resetPasswordKey;
-    }
+  public String getResetPasswordKey() {
+      return resetPasswordKey;
+  }
 
-    public void setAuthorities(Set<Authorities> authorities) {
-        this.authorities = authorities;
-    }
+  public void setResetPasswordKey(String resetPasswordKey) {
+      this.resetPasswordKey = resetPasswordKey;
+  }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) 
-        { 
-          return false;  
-        }
-        User user = (User) obj;
-        return Objects.equals(id, user.id);
-    }
+  public void setAuthorities(Set<Authorities> authorities) {
+      this.authorities = authorities;
+  }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+  @Override
+  public boolean equals(Object obj) {
+      if (this == obj) return true;
+      if (obj == null || getClass() != obj.getClass()) 
+      { 
+        return false;  
+      }
+      User user = (User) obj;
+      return Objects.equals(id, user.id);
+  }
+
+  @Override
+  public int hashCode() {
+      return Objects.hash(id);
+  }
 
 }
