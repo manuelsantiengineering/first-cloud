@@ -11,6 +11,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.provider.ClientDetails;
 
+// Represents the detail of an authorization client.
 public class AuthClientDetails implements ClientDetails {
 
   private static final long serialVersionUID = 1L;
