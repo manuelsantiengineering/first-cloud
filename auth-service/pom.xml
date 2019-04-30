@@ -55,6 +55,11 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+		    <groupId>com.github.mongobee</groupId>
+		    <artifactId>mongobee</artifactId>
+		    <version>0.12</version>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
