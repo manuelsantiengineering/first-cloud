@@ -14,7 +14,7 @@ import java.util.Set;
 @ChangeLog
 public class InitialValuesChangeLog {
 
-    @ChangeSet(order = "001", id = "insertBrowserClientDetails", author = "Marcus Hert Da Corégio")
+    @ChangeSet(order = "001", id = "insertBrowserClientDetails", author = "Tomatito Ragu")
     public void insertBrowserClientDetails(MongoTemplate mongoTemplate) {
         AuthClientDetails browserClientDetails = new AuthClientDetails();
         browserClientDetails.setClientId("browser");
