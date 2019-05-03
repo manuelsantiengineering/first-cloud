@@ -61,4 +61,8 @@ public class OAuth2AuthorizationConfig extends AuthorizationServerConfigurerAdap
               .allowFormAuthenticationForClients();
   }
 
+  
+  //  org.springframework.beans.factory.UnsatisfiedDependencyException: 
+  // Error creating bean with name 'OAuth2AuthorizationConfig': Unsatisfied dependency expressed through field 'authenticationManager';
+  
 }

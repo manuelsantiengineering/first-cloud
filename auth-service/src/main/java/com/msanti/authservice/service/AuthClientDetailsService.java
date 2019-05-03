@@ -17,6 +17,7 @@ public class AuthClientDetailsService implements ClientDetailsService {
   @Override
   public ClientDetails loadClientByClientId(String clientId) {
       return authClientRepository
-              .findByClientId(clientId).orElseThrow(IllegalArgumentException::new);
+              .findByClientId(clientId)
+              .orElseThrow(IllegalArgumentException::new);
   }
 }

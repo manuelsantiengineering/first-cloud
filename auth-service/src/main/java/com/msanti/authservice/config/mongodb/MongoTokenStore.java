@@ -135,7 +135,8 @@ public class MongoTokenStore implements TokenStore {
       MongoAccessToken mongoAccessToken = mongoTemplate.findOne(query, MongoAccessToken.class);
       if (mongoAccessToken != null) {
           accessToken = mongoAccessToken.getToken();
-          if (accessToken != null && !authenticationId.equals(this.authenticationKeyGenerator.extractKey(this.readAuthentication(accessToken)))) {
+          if (accessToken != null 
+                && !authenticationId.equals(this.authenticationKeyGenerator.extractKey(this.readAuthentication(accessToken)))) {
               this.removeAccessToken(accessToken);
               this.storeAccessToken(accessToken, authentication);
           }
@@ -146,8 +147,9 @@ public class MongoTokenStore implements TokenStore {
   @Override
   public Collection<OAuth2AccessToken> findTokensByClientIdAndUserName(String clientId, String username) {
       return findTokensByCriteria(
-              Criteria.where(MongoAccessToken.CLIENT_ID).is(clientId)
-                      .and(MongoAccessToken.USER_NAME).is(username));
+              Criteria
+                .where(MongoAccessToken.CLIENT_ID).is(clientId)
+                .and(MongoAccessToken.USER_NAME).is(username));
   }
   
   @Override
